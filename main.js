@@ -1,9 +1,9 @@
+bot.loadPlugin(pathfinder);
 bot.once('spawn', function () {
-    bot.chat('Я снова вернулся в ваш грязный мир ;>')
 })
 
 bot.on('chat', function (username,message){
-    if(username === "Frosty") return;
+    if(username !== "yuun1sh") return;
     if(message === "Привет Frosty" || message === "Привет фрости" || message === "привет фрости" || message === "Привет Фрости" && username === "yuun1sh") {
         setTimeout( () => bot.chat(username + ", привет! Как ваши дела?"), 3000)
     } else {
@@ -13,6 +13,7 @@ bot.on('chat', function (username,message){
 })
 
 bot.on('chat', function (username, message) {
+    if(username !== "yuun1sh") return;
     if(username == "Frosy") return;
     if (message === "отдай" || message === "верни" && username === "yuun1sh"){
         function tossNext(){
@@ -44,3 +45,53 @@ bot.on('chat', function (username, message) {
         bot.pathfinder.setGoal(null, 1)
     }
 })
+
+bot.on('chat',(username,message)=>{
+    if(username !== "yuun1sh") return;
+    if(username === bot.username) return
+
+    switch (message){
+        case 'Спать':
+            goToSleep()
+            break
+        case 'Вставай':
+            wakeUp()
+            break
+        case 'Выйди':
+            bot.quit()
+            break
+    }
+});
+
+bot.on('sleep',()=>{
+    bot.chat('Спокойной ночи')
+});
+
+bot.on('wake',()=>{
+    bot.chat('Доброе утро')
+});
+
+async function goToSleep() {
+    const bed = bot.findBlock({
+        matching: block => bot.isABed(block)
+    })
+
+    if (bed) {
+        try {
+            await bot.sleep(bed)
+            bot.chat("Я сплю")
+        } catch (err) {
+        bot.chat(`Я не могу уснуть`)
+        }
+} else {
+bot.chat('Поблизости нет кровати')
+}
+}
+
+async function  wakeUp() {
+    try {
+        await bot.wake()
+    } catch (err) {
+        bot.chat(`Я не могу проснуться`)
+    }
+}
