@@ -1,0 +1,11 @@
+{
+  "name": "hahahaha",
+  "version": "1.0.0",
+  "description": "minecraft-myluv",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yuun1sh",
+  "license": "ISC"
+}
