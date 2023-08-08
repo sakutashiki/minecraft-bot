@@ -51,7 +51,7 @@ bot.on('chat',(username,message)=>{
     if(username === bot.username) return
 
     switch (message){
-        case 'Спать':
+        case 'спать':
             goToSleep()
             break
         case 'Вставай':
