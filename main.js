@@ -41,7 +41,7 @@ bot.on('chat', function (username, message) {
         const player = bot.players[username]
         bot.pathfinder.setGoal(new GoalNear(player.entity.position.x, player.entity.position.y, player.entity.position.z, 1))
     }
-    if(message === "Остановись" || message === "будь здесь" || message === "остановись" || message === "стой"){
+    if(message === "остановись" || message === "будь здесь" || message === "остановись" || message === "стой"){
         bot.pathfinder.setGoal(null, 1)
     }
 })
