@@ -8,7 +8,7 @@ bot.on('chat', function (username,message){
         setTimeout( () => bot.chat(username + ", привет! Как ваши дела?"), 3000)
     } else {
         if(message !== "Привет Frosty" || message !== "Привет фрости" || message !== "привет фрости" || message !== "Привет Фрости") return;
-        setTimeout( () => bot.chat(username + ", я тебя не знаю........."), 3000)
+        setTimeout( () => bot.chat(username + ", я тебя не знаю..."), 3000)
     }
 })
 
