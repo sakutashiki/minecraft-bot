@@ -14,7 +14,7 @@ bot.on('chat', function (username,message){
 
 bot.on('chat', function (username, message) {
     if(username !== "yuun1sh") return;
-    if(username == "Frosy") return;
+    if(username == "Frosty") return;
     if (message === "отдай" || message === "верни" && username === "yuun1sh"){
         function tossNext(){
             if(bot.inventory.items().length === 0) {
