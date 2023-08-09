@@ -33,7 +33,7 @@ bot.on('chat', function (username, message) {
     if(message === "Работать, огузок"){
         bot.chat('(')
     }
-    if(message === "За мной" || message === "за мной" || message === "пошли раб"){
+    if(message === "за мной" || message === "за мной" || message === "пошли раб"){
         const player = bot.players[username]
         bot.pathfinder.setGoal(new GoalFollow(player.entity, 1), true)
     }
